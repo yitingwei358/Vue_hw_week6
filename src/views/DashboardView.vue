@@ -21,6 +21,7 @@ export default {
   methods: {
     logout () {
       document.cookie = `hexToken=; expires=${new Date()}`// 清除token等資料
+      alert('您已成功登出')
       this.$router.push('/login')
     },
     checkAdmin () {

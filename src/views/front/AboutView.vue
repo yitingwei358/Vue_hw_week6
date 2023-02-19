@@ -1,5 +1,5 @@
 <template>
-  <h3>This is About page.</h3>
+  <h3>關於我們頁面</h3>
 </template>
 
 <script>
