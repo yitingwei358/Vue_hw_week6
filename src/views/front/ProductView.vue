@@ -17,7 +17,7 @@ export default {
   methods: {
     getProduct () {
       console.log(this.id)
-      const url = `${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/product/${this.id}`
+      const url = `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/product/${this.id}`
       console.log(url)
       this.$http.get(url).then((res) => {
         this.product = res.data.product

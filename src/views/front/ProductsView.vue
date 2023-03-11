@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getProductList () {
-      const url = `${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/products/all`
+      const url = `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/products/all`
       this.$http
         .get(url)
         .then((res) => {
@@ -39,7 +39,7 @@ export default {
         })
     },
     addToCart (id) {
-      const url = `${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/cart`
+      const url = `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/cart`
       const data = {
         product_id: id,
         qty: 1

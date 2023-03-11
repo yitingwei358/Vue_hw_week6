@@ -25,7 +25,7 @@ export default {
       this.$router.push('/login')
     },
     checkAdmin () {
-      const url = `${VITE_APP_URL}/v2/api/user/check`
+      const url = `${VITE_APP_URL}v2/api/user/check`
       this.$http
         .post(url)
         .then((res) => {

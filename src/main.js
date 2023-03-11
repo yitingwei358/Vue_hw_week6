@@ -1,5 +1,8 @@
 /* eslint-disable camelcase */
 import { createApp } from 'vue'
+
+// import 'bootstrap'// bt5的js
+import 'bootstrap'
 import './assets/all.scss'
 
 import axios from 'axios'
@@ -16,6 +19,8 @@ import { defineRule, configure, Form, Field, ErrorMessage } from 'vee-validate'
 import AllRules from '@vee-validate/rules'
 import { localize, setLocale } from '@vee-validate/i18n'
 import zh_TW from '@vee-validate/i18n/dist/locale/zh_TW.json'
+
+import { date, currency } from './methods/filters'
 Object.keys(AllRules).forEach(rule => {
   defineRule(rule, AllRules[rule])
 })
@@ -32,4 +37,10 @@ app.component('ErrorMessage', ErrorMessage)
 
 app.use(VueAxios, axios)
 app.use(router)
+// app.use(bootstrap)
+
+app.config.globalProperties.$filters = {
+  date,
+  currency
+}
 app.mount('#app')

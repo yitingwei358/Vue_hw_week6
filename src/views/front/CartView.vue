@@ -213,7 +213,7 @@ export default {
   components: { ErrorMessage },
   methods: {
     getCarts () {
-      const url = `${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/cart`
+      const url = `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/cart`
       this.$http
         .get(url)
         .then((res) => {
@@ -226,7 +226,7 @@ export default {
     },
     updateCartItem (item) {
       // 有分 購物車的id 和 產品的id
-      const url = `${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/cart/${item.id}`
+      const url = `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/cart/${item.id}`
       const data = {
         product_id: item.product.id,
         qty: item.qty
@@ -244,7 +244,7 @@ export default {
         })
     },
     deleteCartItem (item) {
-      const url = `${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/cart/${item.id}`
+      const url = `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/cart/${item.id}`
       this.loadingItem = item.id
       this.$http
         .delete(url)
@@ -259,7 +259,7 @@ export default {
         })
     },
     deleteAllCart () {
-      const url = `${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/carts`
+      const url = `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/carts`
       this.$http
         .delete(url)
         .then((res) => {
@@ -275,7 +275,7 @@ export default {
       return phoneNumber.test(value) ? true : '請輸入正確的手機號碼'
     },
     createOrder () {
-      const url = `${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/order`
+      const url = `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/order`
       const data = this.form
       this.$http
         .post(url, { data })

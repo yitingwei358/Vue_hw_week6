@@ -36,8 +36,6 @@ const { VITE_APP_URL } = import.meta.env
 export default {
   data () {
     return {
-      api: 'https://vue3-course-api.hexschool.io/v2',
-      path: 'j437437',
       user: {
         username: '',
         password: ''
@@ -46,7 +44,7 @@ export default {
   },
   methods: {
     login () {
-      const url = `${VITE_APP_URL}/v2/admin/signin`
+      const url = `${VITE_APP_URL}v2/admin/signin`
       this.$http
         .post(url, this.user)
         .then((res) => {
